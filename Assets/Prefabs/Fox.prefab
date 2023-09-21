@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 4154475500436000444}
   - component: {fileID: 3736539933786495255}
   m_Layer: 0
-  m_Name: Animal_Fox_02
+  m_Name: Fox
   m_TagString: Animals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +896,7 @@ Transform:
   - {fileID: 6765028541498327534}
   - {fileID: 7520072049697441812}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &7099193455064882788
 Animator:

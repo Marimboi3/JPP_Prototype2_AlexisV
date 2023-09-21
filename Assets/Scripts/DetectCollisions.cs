@@ -6,38 +6,65 @@ public class DetectCollisions : MonoBehaviour
 {
     private GameObject UI;
     private GameObject prefab;
+/*    private float foxHealth = 1;
+    private float mooseHealth = 3;
+    private float dogHealth = 2;*/
+    private float currentHealth;
+    private UserInterface gameManager;
+
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         prefab = this.gameObject;
         UI = GameObject.Find("UI");
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        gameManager = GameObject.Find("UI").GetComponent<UserInterface>();
 
+        /*if (prefab.name == "Fox")
+        {
+            currentHealth = foxHealth;
+        }
+        else if (prefab.name == "Moose")
+        {
+            currentHealth = mooseHealth;
+        }
+        else if (prefab.name == "Dog")
+        {
+            currentHealth = dogHealth;
+        }
+
+        healthBar.SetMaxHealth(currentHealth);*/
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (prefab.CompareTag("Food") && other.CompareTag("Animals"))
+        if (gameObject.CompareTag("Food") && other.CompareTag("Player"))
         {
-            float score = UI.GetComponent<UserInterface>().getScore() + 1;
-
-            //score++;
-
-            UI.GetComponent<UserInterface>().setScore(score);
-            Destroy(other.gameObject);
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
 
-        if (prefab.CompareTag("Player") && !other.CompareTag("Food"))
+        if (other.CompareTag("Animals"))
+        {
+            other.GetComponent<AnimalHunger>().FeedAnimal(1);
+            Destroy(gameObject);
+            /*if (prefab.name == "Fox")
+            {
+                TakeDamage(1);
+            }
+            float score = UI.GetComponent<UserInterface>().getScore() + 1;
+
+            UI.GetComponent<UserInterface>().setScore(score);
+            Destroy(other.gameObject);
+            Destroy(gameObject);*/
+        }
+
+/*        if (prefab.CompareTag("Player") && !other.CompareTag("Food"))
         {
             Debug.Log("Youve been hit!");
             float lives = UI.GetComponent<UserInterface>().getLives() - 1;
-
-            //score++;
 
             UI.GetComponent<UserInterface>().setLives(lives);
             Destroy(other.gameObject);
@@ -46,6 +73,6 @@ public class DetectCollisions : MonoBehaviour
                 Destroy(gameObject);
                 Debug.Log("GAME OVER!");
             }
-        }
+        }*/
     }
 }

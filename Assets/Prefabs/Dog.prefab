@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 1633722592389910801}
   - component: {fileID: 6402278326291172503}
   m_Layer: 0
-  m_Name: Dog_Doberman_01
+  m_Name: Dog
   m_TagString: Animals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8660608995598363873}
   - component: {fileID: 5937869669673553732}
   m_Layer: 0
-  m_Name: Animal_Moose_01
+  m_Name: Moose
   m_TagString: Animals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

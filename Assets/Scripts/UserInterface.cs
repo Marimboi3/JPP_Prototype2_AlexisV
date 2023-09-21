@@ -18,8 +18,25 @@ public class UserInterface : MonoBehaviour
         Debug.Log("Score = " + score);
     }
 
+    public void AddLives(int value)
+    {
+        lives += value;
+        if (lives <= 0)
+        {
+            Debug.Log("Game Over!");
+            lives = 0;
+        }
+        Debug.Log("Lives = " + lives);
+    }
+
+    public void AddScore(int value)
+    {
+        score += value;
+        Debug.Log("Score = " + score);
+    }
+
     // Update is called once per frame
-    void Update()
+/*    void Update()
     {
         if (score != lastScore)
         {
@@ -27,7 +44,7 @@ public class UserInterface : MonoBehaviour
         }
         lastScore = score;
 
-        if (lives != lastLives)
+        if (lives != lastLives && lives != 0)
         {
             Debug.Log("Lives = " + lives);
         }
@@ -55,5 +72,5 @@ public class UserInterface : MonoBehaviour
     public void setLives(float num)
     {
         lives = num;
-    }
+    }*/
 }
